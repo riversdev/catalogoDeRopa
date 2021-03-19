@@ -1,8 +1,11 @@
 <?php
+# CLASE DE LA CONEXION
 class Connection
 {
+    # FUNCION CONECTAR A LA BD
     public static function connect()
     {
+        # INTENTO DE CONEXION A LA BD USANDO PDO
         try {
             $link = new PDO("mysql:host=localhost;dbname=tiendaderopa", "root", "");
             $link->exec('SET NAMES utf8');

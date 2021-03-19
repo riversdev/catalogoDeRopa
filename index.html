@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálgo de ropa</title>
+  <!-- JQuery -->
+  <script src="static\jquery-3.5.1.min.js"></script>
+  <!-- Datatables -->
+  <link rel="stylesheet" href="static\datatables\datatables.css">
+  <script src="static\datatables\datatables.js"></script>
+  <!-- Alertify -->
+  <link rel="stylesheet" href="static\alertifyjs\css\alertify.css">
+  <link rel="stylesheet" href="static\alertifyjs\css\themes\default.css">
+  <script src="static\alertifyjs\js\alertify.js"></script>
+  <!-- Bootstrap 5 beta -->
+  <link rel="stylesheet" href="static\bootstrap\css\bootstrap.css">
+  <script src="static\bootstrap\js\bootstrap.js"></script>
+  <!-- Axios -->
+  <script src="static\axios\axios.js"></script>
+  <!-- Main JS -->
+  <script src="templates\js\main.js"></script>
+</head>
+
+<body>
+  <!-- NAVBAR SOLO CON EL BOTON DE NAVEGACION PARA NUEVA PRENDA -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Catálogo de ropa</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCatalogoRopa" aria-controls="navbarCatalogoRopa" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCatalogoRopa">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <form class="d-flex">
+          <button id="btnModalPrendas" type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="modal" data-bs-target="#modalPrendas">
+            Agregar prenda
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENEDOR DE LA TABLA DE PRENDAS -->
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-12" id="contenedorTablaPrendas"></div>
+    </div>
+  </div>
+
+  <!-- MODAL DE AGREGAR Y EDITAR PRENDAS -->
+  <div class="modal fade" id="modalPrendas" tabindex="-1" aria-labelledby="modalPrendaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg-secondary">
+          <h5 class="modal-title text-white" id="modalPrendaLabel">Agregar prenda</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <form id="formPrenda" class="form-row card p-3">
+            <input type="hidden" id="txtId">
+            <div class="col-md-12 mb-3">
+              <label for="txtNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="txtNombre" required />
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="txtMarca" class="form-label">Marca</label>
+              <input type="text" class="form-control" id="txtMarca" required />
+            </div>
+            <div class="col-md-12 mb-3">
+              <label for="txtPrecio" class="form-label">Precio</label>
+              <input type="number" class="form-control" id="txtPrecio" required />
+            </div>
+            <div class="col-12 d-flex justify-content-end">
+              <button type="button" class="btn btn-outline-white mx-3" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-outline-success">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
